@@ -31,6 +31,7 @@ def clean_json(s):
 
 
 def apt_key(key_id):
+    apt_install('gnupg-curl')
     subprocess.check_call(['apt-key', 'adv', '--keyserver',
                            'hkps://keyserver.ubuntu.com', '--recv', key_id])
 
